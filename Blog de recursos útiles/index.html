@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Recursos útiles</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8f8f8, #d8d8db);
+            color: rgb(59, 72, 72);
+            
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(90deg, #ff5401,  #ae4d46);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: rgba(4,5,5,0.76) -11px 8px 11px;
+            font-weight: bolder;
+        }
+
+        header h1 {
+            font-size: 3.0em;
+            letter-spacing: 2px;
+        }
+
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(30, 30, 47);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ff5e00;
+            text-decoration: none;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Contenido */
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .content h2 {
+            color: rgb(59, 72, 72);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .content p {
+            line-height: 1.6;
+        }
+
+        /* Artículos */
+        .article {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(238, 134, 43, 0.15);
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            background: rgb(235, 235, 236);
+        }
+
+        .article h2 {
+            margin-top: 0;
+            color: #ff6f61;
+        }
+
+        .article a {
+            color: rgb(59, 72, 72);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+        /* Formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea, button {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input, textarea {
+            background: rgba(255, 255, 255, 0.2);
+            color: #000000;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #00d4ff;
+        }
+
+        button {
+            background: #ff5e00;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgb(195, 79, 52)
+        }
+
+        /* Pie de página */
+        footer {
+            background: #1e1e2f;
+            color: #7a7a7a;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animación inicial */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content, nav, header, footer {
+            animation: fadeIn 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog de Recursos Útiles</h1>
+    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#articulos">Artículos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="content" id="inicio">
+        <h2>Bienvenidos</h2>
+        <p>Descubre los recursos más avanzados, artículos y consejos únicos en nuestro blog.</p>
+    </div>
+    <div class="content" id="articulos">
+        <h2>Artículos Populares</h2>
+        <div class="article">
+            <h2>Artículo 1: Consejos para mejorar tu productividad</h2>
+            <p>Descubre cómo organizar tu día y ser más productivo...</p>
+            <a href="#">Leer más</a>
+        </div>
+        <div class="article">
+            <h2>Artículo 2: Las mejores recetas rápidas</h2>
+            <p>Aprende a cocinar platillos deliciosos en menos de 30 minutos...</p>
+            <a href="#">Leer más</a>
+        </div>
+    </div>
+    <div class="content" id="contacto">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required placeholder="Escribe tu nombre">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" rows="4" required placeholder="Escribe tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <p>© 2024 Blog de Recursos Útiles</p>
+    </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Gracias por tu mensaje, nos pondremos en contacto pronto.');
+        });
+    </script>
+</body>
+</html>
