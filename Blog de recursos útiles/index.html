@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CurioBlog</title>
+    <title>Blog TuChancero</title>
     <style>
         /* Estilos generales */
         body {
@@ -17,7 +17,7 @@
 
         /* Encabezado */
         header {
-            background: linear-gradient(90deg, #ff5401,  #ae4d46);
+            background: linear-gradient(90deg, #ff530070, #ff6b12);
             color: white;
             text-align: center;
             padding: 2px 0;
@@ -62,7 +62,7 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.93);
             backdrop-filter: blur(10px);
         }
 
@@ -169,27 +169,62 @@
 
         .imaglogo {
         width: 109px;
-        height: 102px;
+        height: 95px;
         margin: -99px 438px;
         margin-bottom: 28px;
-        margin-right: -14px;
+        margin-right: 10px;
         margin-top: -116px;
         }
+         /* Estilo del menú desplegable */
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        z-index: 1000;
+    }
+    .dropdown-menu a {
+        display: block;
+        padding: 5px;
+        color: black;
+        text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+        background: #f0f0f0;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
     </style>
 </head>
 <body>
     <header>
-        <h1>CurioBlog</h1>
-        <img src="imagesperfil/espia.png" alt="logo" class="imaglogo">
+        <h1>TuChancero</h1>
+        <img src="imagesperfil/logoTC.png" alt="logo" class="imaglogo">
     </header>
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#articulos">Artículos</a>
         <a href="#contacto">Contacto</a>
+        <div class="dropdown">
+            <a href="#sorteos" class="dropdown-toggle">Sorteos ▼</a>
+            <div class="dropdown-menu">
+                <a href="#sorteo1">Sorteo 1</a>
+                <a href="#sorteo2">Sorteo 2</a>
+                <a href="#sorteo3">Sorteo 3</a>
+            </div>
+            </div>
     </nav>
     <div class="content" id="inicio">
         <h2>Bienvenidos</h2>
-        <p>Descubre los recursos más avanzados, artículos y consejos únicos en nuestro blog.</p>
+        <p>Artículos, noticias y resultados de loterias, únicos en nuestro blog.</p>
     </div>
     <div class="content" id="articulos">
         <h2>Artículos Populares</h2>
@@ -215,7 +250,7 @@
         </form>
     </div>
     <footer>
-        <p>© 2024 Blog de Recursos Útiles</p>
+        <p>© 2024 Blog TuChancero</p>
     </footer>
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
