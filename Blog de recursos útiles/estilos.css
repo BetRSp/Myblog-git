@@ -93,6 +93,7 @@ line-height: 1.8; /* Espaciado entre líneas */
     color: rgb(59, 72, 72);
     margin-bottom: 20px;
     font-size: 1.8em;
+    text-align: center;
 }
 
 .content p {
@@ -129,20 +130,38 @@ line-height: 1.8; /* Espaciado entre líneas */
 }
 
 /* Formulario */
-form {
+form  {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    width: 774px; /* Ancho fijo para el formulario */
+    background-color: #eadacd; /* Fondo del formulario */
+    padding: 62px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 label {
     font-weight: bold;
+    text-align: left;
+    width: 100%;
 }
 
-input, textarea, button {
-    padding: 10px;
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%; /* Ancho completo del formulario */
+    padding: 8px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 0.9em;
+    border: 1px solid #1e1e2f;
+    background: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    color: #000000; /* Texto negro */
 }
 
 input, textarea {
@@ -155,10 +174,15 @@ input:focus, textarea:focus {
 }
 
 button {
+    padding: 12px 23px; /* Tamaño reducido */
+    border-radius: 5px;
+    font-size: 0.8em; /* Tamaño del texto del botón más pequeño */
     background: #ff5e00;
     color: white;
+    border: none;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    align-self: center; /* Centra el botón horizontalmente */
 }
 
 button:hover {
