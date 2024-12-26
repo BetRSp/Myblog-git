@@ -68,37 +68,37 @@ nav a:hover {
     backdrop-filter: blur(10px);
 }
 /* Estilos específicos para la sección "Bienvenidos" */
-.inicio-section {
-max-width: 921px;
-text-align: center;
-padding: 20px;
-background-color: #eeeeef;
-border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.93);
-}
+    .inicio-section {
+    max-width: 921px;
+    text-align: center;
+    padding: 20px;
+    background-color: #eeeeef;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.93);
+    }
 
-.inicio-title {
-font-size: 2.5rem; 
-color: #ff5e00;
-margin-bottom: 10px;
-}
+    .inicio-title {
+    font-size: 2.5rem; 
+    color: #ff5e00;
+    margin-bottom: 10px;
+    }
 
-.inicio-text {
-font-size: 1.2rem; 
-color: #555; 
-line-height: 1.8; /* Espaciado entre líneas */
-}
+    .inicio-text {
+    font-size: 1.2rem; 
+    color: #555; 
+    line-height: 1.8; 
+    }
 
-.content h3 {
+    .content h3 {
     color: rgb(59, 72, 72);
     margin-bottom: 20px;
     font-size: 1.8em;
     text-align: center;
-}
+    }
 
-.content p {
-    line-height: 1.6;
-}
+    .content p {
+        line-height: 1.6;
+    }
 
 /* Artículos */
 .article {
@@ -134,12 +134,12 @@ form  {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
-    width: 774px; /* Ancho fijo para el formulario */
-    background-color: #eadacd; /* Fondo del formulario */
-    padding: 62px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1); /* Sombra */
+    align-items: flex-start; 
+    width: 774px; 
+    background-color: #eadacd; 
+    padding: 62px; 
+    border-radius: 8px; 
+    box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1); 
 }
 
 label {
@@ -154,15 +154,26 @@ h2 {
     margin-bottom: 15px;
 }
 
-input, textarea {
-    width: 100%; /* Ancho completo del formulario */
+input{
+    width: 100%; 
     padding: 8px;
     border-radius: 5px;
-    font-size: 0.9em;
+    font-size: 1em;
     border: 1px solid #1e1e2f;
-    background: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
-    color: #000000; /* Texto negro */
+    background: rgba(255, 255, 255, 0.2); 
+    color: #000000; 
 }
+textarea {
+    width: 100%; 
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    border: 1px solid #1e1e2f;
+    background: rgba(255, 255, 255, 0.2); 
+    color: #000000; 
+    margin-bottom: 16px;
+}
+
 
 input, textarea {
     background: rgba(255, 255, 255, 0.2);
@@ -174,15 +185,15 @@ input:focus, textarea:focus {
 }
 
 button {
-    padding: 12px 23px; /* Tamaño reducido */
+    padding: 12px 23px; 
     border-radius: 5px;
-    font-size: 0.8em; /* Tamaño del texto del botón más pequeño */
+    font-size: 0.8em; 
     background: #ff5e00;
     color: white;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
-    align-self: center; /* Centra el botón horizontalmente */
+    align-self: center; 
 }
 
 button:hover {
@@ -214,38 +225,38 @@ footer p {
     animation: fadeIn 1s ease;
 }
 
-.imaglogo {
-width: 109px;
-height: 95px;
-margin: -99px 673px;
-margin-bottom: 53px;
-margin-right: -10px;
-margin-top: -137px;
-}
+    .imaglogo {
+    width: 109px;
+    height: 95px;
+    margin: -99px 673px;
+    margin-bottom: 53px;
+    margin-right: -10px;
+    margin-top: -137px;
+    }
  /* Estilo del menú desplegable */
-.dropdown {
-position: relative;
-}
-.dropdown-menu {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-background: white;
-color: black;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-border-radius: 5px;
-z-index: 1000;
-}
-.dropdown-menu a {
-display: block;
-padding: 5px;
-color: black;
-text-decoration: none;
-}
-.dropdown-menu a:hover {
-background: #ff5e00;
-}
-.dropdown:hover .dropdown-menu {
-display: block;
-}
+    .dropdown {
+    position: relative;
+    }
+    .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+    }
+    .dropdown-menu a {
+    display: block;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+    background: #ff5e00;
+    }
+    .dropdown:hover .dropdown-menu {
+    display: block;
+    }
