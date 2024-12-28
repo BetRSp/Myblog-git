@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números</title>
+    <link rel="stylesheet" href="estilos.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Números aleatorios</h1>
+        <button id="generateButton">Generar Números</button>
+        <div class="output" id="output">
+            <p>Sorteo: <span id="sorteo"></span></p>
+            <p>Serie: <span id="serie"></span></p>
+            <button id="buttonsalir" onclick="window.location.href='index.html';">Salir</button>
+        </div>
+    </div>
+
+    <script>
+    // Espera a que el documento esté cargado
+document.addEventListener("DOMContentLoaded", function () {
+    const generateButton = document.getElementById("generateButton");
+    const sorteoOutput = document.getElementById("sorteo");
+    const serieOutput = document.getElementById("serie");
+
+    // Función para generar un número aleatorio en un rango
+    function generarNumeroAleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Evento para generar números al hacer clic
+    generateButton.addEventListener("click", function () {
+        const sorteo = generarNumeroAleatorio(1000, 9999); // Números de 4 cifras
+        const serie = generarNumeroAleatorio(100, 999);   // Números de 3 cifras
+
+        // Mostrar los números generados
+        sorteoOutput.textContent = sorteo;
+        serieOutput.textContent = serie;
+    });
+});
+    </script>
+</body>
+</html>
