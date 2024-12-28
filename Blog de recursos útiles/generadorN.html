@@ -13,7 +13,7 @@
         <div class="output" id="output">
             <p>Sorteo: <span id="sorteo"></span></p>
             <p>Serie: <span id="serie"></span></p>
-            <button id="buttonsalir" onclick="window.location.href='index.html';">Salir</button>
+            <button class="salir-button" id="buttonsalir" onclick="window.location.href='index.html';">Salir</button>
         </div>
     </div>
 <style>
@@ -71,15 +71,22 @@ button {
 }
 
 .salir-button {
-    background-color: #f00; /* Color de fondo rojo */
+    background-color: rgb(255, 81, 0); /* Color de fondo rojo */
     color: #fff; /* Color del texto blanco */
     border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
+    padding: 11px 21px; /* Aumenta el espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
     cursor: pointer; /* Indicador de clic */
-    font-size: 1em; /* Tamaño del texto */
+    font-size: 0.8em; /* Aumenta el tamaño del texto */
     transition: background-color 0.3s ease; /* Transición suave */
+    width: auto; /* Ajuste automático del ancho */
+    height: auto; /* Ajuste automático de la altura */
 }
+
+.salir-button:hover {
+    background-color: #f88d52;
+}
+
 
 button:hover {
     background-color: #f5a243;
