@@ -16,7 +16,82 @@
             <button id="buttonsalir" onclick="window.location.href='index.html';">Salir</button>
         </div>
     </div>
+<style>
+    /* Generador de numeros */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
 
+.container {
+    text-align: center; /* Asegura que el contenido dentro del contenedor esté centrado */
+}
+
+#output {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px; /* Ajustado para mantener proporción */
+}
+
+.container h1 {
+    max-width: 636px;
+    margin: 40px auto;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(-20deg, #ff530070, #ff6b12);
+    text-align: center;
+    padding: 2px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 0px #312E2E, 5px 4px 0px rgba(0, 0, 0, 0.15);
+    font-family: Lucida Console;
+    font-size: 36px;
+    letter-spacing: 1px;
+    word-spacing: -9px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #e47f21;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.salir-button {
+    background-color: #f00; /* Color de fondo rojo */
+    color: #fff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Indicador de clic */
+    font-size: 1em; /* Tamaño del texto */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+button:hover {
+    background-color: #f5a243;
+}
+
+.output {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+</style>
     <script>
     // Espera a que el documento esté cargado
 document.addEventListener("DOMContentLoaded", function () {
