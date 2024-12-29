@@ -167,6 +167,12 @@ h2 {
     margin-bottom: 15px;
     color: black;
 }
+.content h5 {
+    text-align: center;
+    text-shadow: 2px 2px 0px #FA935C, 5px 4px 0px rgba(0,0,0,0.15);
+    font-size: 1.8em;
+    color: black;
+}
 h4 {
     text-align: center;
     font-size: 1.8em;
@@ -254,6 +260,14 @@ footer p {
     margin-right: -10px;
     margin-top: -137px;
     }
+    .imagesarticulo1 {
+        width: 309px;
+        height: 324px;
+        margin: -99px 305px;
+        margin-bottom: 5px;
+        margin-right: 35px;
+        margin-top: 24px;
+        }
  /* Estilo del menú desplegable */
     .dropdown {
     position: relative;
