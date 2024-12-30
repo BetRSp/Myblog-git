@@ -8,126 +8,148 @@
 </head>
 <body>
     <div class="container">
-        <h1>Generador de Números aleatorios</h1>
-        <button id="generateButton">Generar Números</button>
+        <h1>Tu Número de la Suerte</h1>
+        
+        <!-- Campo para seleccionar la fecha de nacimiento -->
+        <label for="fechaNacimiento">Selecciona tu fecha de nacimiento:</label>
+        <input type="date" id="fechaNacimiento">
+        
+        <button id="generateButton">Generar Número de la Suerte</button>
+        
         <div class="output" id="output">
+            <p>Número de la Suerte: <span id="numeroSuerte"></span></p>
             <p>Sorteo: <span id="sorteo"></span></p>
             <p>Serie: <span id="serie"></span></p>
             <button class="salir-button" id="buttonsalir" onclick="window.location.href='index.html';">Regresar</button>
         </div>
     </div>
-<style>
-    /* Generador de numeros */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #eadacd;
-}
 
-.container {
-    text-align: center; 
-    max-width: 900px;
-    margin: 40px auto;
-    background: linear-gradient(135deg, #f8f8f8, #eadacd);
-    padding: 62px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.93);
-    backdrop-filter: blur(10px);
-}
+    <style>
+        /* Estilos personalizados */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #eadacd;
+        }
 
-#output {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 20px;
-}
+        .container {
+            text-align: center; 
+            max-width: 900px;
+            margin: 40px auto;
+            background: linear-gradient(135deg, #f8f8f8, #eadacd);
+            padding: 62px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.93);
+            backdrop-filter: blur(10px);
+            
+        }
+        .container h1 {
+            text-shadow: 2px 2px 0px #FA935C, 5px 4px 0px rgba(0,0,0,0.15);
+            text-align: center;
+            color: black;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
 
-.container h1 {
-    max-width: 636px;
-    margin: 40px auto;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    background: linear-gradient(-20deg, #ff530070, #ff6b12);
-    text-align: center;
-    padding: 2px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-shadow: 2px 2px 0px #312E2E, 5px 4px 0px rgba(0, 0, 0, 0.15);
-    font-family: Lucida Console;
-    font-size: 36px;
-    letter-spacing: 1px;
-    word-spacing: -9px;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: capitalize;
-}
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: rgb(255, 81, 0); 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: rgb(255, 81, 0); 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .salir-button {
+            background-color: rgb(255, 81, 0); 
+            color: #fff; 
+            border: none; 
+            padding: 11px 21px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 0.8em; 
+            transition: background-color 0.3s ease; 
+            width: auto; 
+            height: auto; 
+        }
 
-.salir-button {
-    background-color: rgb(255, 81, 0); 
-    color: #fff; 
-    border: none; 
-    padding: 11px 21px; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    font-size: 0.8em; 
-    transition: background-color 0.3s ease; 
-    width: auto; 
-    height: auto; 
-}
+        .salir-button:hover {
+            background-color: #f5a243;
+        }
 
-.salir-button:hover {
-    background-color: #f5a243;
-}
+        button:hover {
+            background-color: #f5a243;
+        }
+    </style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const generateButton = document.getElementById("generateButton");
+        const fechaNacimientoInput = document.getElementById("fechaNacimiento");
+        const numeroSuerteOutput = document.getElementById("numeroSuerte");
+        const sorteoOutput = document.getElementById("sorteo");
+        const serieOutput = document.getElementById("serie");
 
-button:hover {
-    background-color: #f5a243;
-}
+        // Almacenará los resultados generados para cada fecha
+        const resultadosPorFecha = {};
 
-.output {
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
+        // Función para generar el número de la suerte
+        function generarNumeroSuerte(fecha) {
+            const fechaSinGuiones = fecha.replace(/-/g, ""); // Elimina guiones
+            let suma = 0;
 
-</style>
-    <script>
-    // Espera a que el documento esté cargado
-document.addEventListener("DOMContentLoaded", function () {
-    const generateButton = document.getElementById("generateButton");
-    const sorteoOutput = document.getElementById("sorteo");
-    const serieOutput = document.getElementById("serie");
+            // Suma los dígitos de la fecha
+            for (let char of fechaSinGuiones) {
+                suma += parseInt(char);
+            }
 
-    // Función para generar un número aleatorio en un rango
-    function generarNumeroAleatorio(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+            // Reducir la suma a un número de 1 a 99
+            return suma % 100 || 99;
+        }
 
-    // Evento para generar números al hacer clic
-    generateButton.addEventListener("click", function () {
-        const sorteo = generarNumeroAleatorio(1000, 9999); // Números de 4 cifras
-        const serie = generarNumeroAleatorio(100, 999);   // Números de 3 cifras
+        // Función para generar un número aleatorio en un rango
+        function generarNumeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-        // Mostrar los números generados
-        sorteoOutput.textContent = sorteo;
-        serieOutput.textContent = serie;
+        // Evento para generar números
+        generateButton.addEventListener("click", function () {
+            const fechaNacimiento = fechaNacimientoInput.value;
+
+            if (fechaNacimiento) {
+                // Verifica si ya se generaron resultados para esta fecha
+                if (resultadosPorFecha[fechaNacimiento]) {
+                    const resultado = resultadosPorFecha[fechaNacimiento];
+                    numeroSuerteOutput.textContent = resultado.numeroSuerte;
+                    sorteoOutput.textContent = resultado.sorteo;
+                    serieOutput.textContent = resultado.serie;
+                } else {
+                    // Genera nuevos resultados
+                    const numeroSuerte = generarNumeroSuerte(fechaNacimiento);
+                    const sorteo = generarNumeroAleatorio(1000, 9999);
+                    const serie = generarNumeroAleatorio(100, 999);
+
+                    // Almacena los resultados
+                    resultadosPorFecha[fechaNacimiento] = { numeroSuerte, sorteo, serie };
+
+                    // Muestra los resultados
+                    numeroSuerteOutput.textContent = numeroSuerte;
+                    sorteoOutput.textContent = sorteo;
+                    serieOutput.textContent = serie;
+                }
+            } else {
+                alert("Por favor, selecciona una fecha de nacimiento.");
+            }
+        });
     });
-});
-    </script>
+</script>
 </body>
 </html>
