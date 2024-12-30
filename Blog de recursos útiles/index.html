@@ -98,9 +98,31 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Gracias por tu mensaje, nos pondremos en contacto pronto.');
+    
+            // Obtener los valores del formulario
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+    
+            if (!name || !message) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+    
+            // Crear el mensaje para WhatsApp
+            const whatsappMessage = `Hola, mi nombre es ${name}. Este es mi mensaje: ${message}`;
+    
+            // Número de WhatsApp al que se enviará el mensaje
+            const whatsappNumber = '+573153160456';
+    
+            // Redirigir al enlace de WhatsApp
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+    
+            // Limpiar el formulario
             document.getElementById('name').value = '';
             document.getElementById('message').value = '';
+    
+            alert('Gracias por tu mensaje. Te redirigiremos a WhatsApp para enviarlo.');
         });
     </script>
 </body>
