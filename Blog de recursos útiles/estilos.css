@@ -15,17 +15,19 @@ header {
     text-align: center;
     padding: 2px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-shadow: 2px 2px 0px #312E2E, 5px 4px 0px rgba(0,0,0,0.15);
+    text-shadow: 2px 2px 0px #fd5000, 5px 4px 0px rgba(0,0,0,0.15);
     font-family: Lucida Console;
     font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 0px;
-    color: #ffffff;
+    color: black;
     font-weight: bold;
     text-decoration: none;
     font-style: normal;
     font-variant: small-caps;
     text-transform: capitalize;
+    margin-bottom: -51px;
+    margin-top: -39px;
 }
 
 header h1 {
