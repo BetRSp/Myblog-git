@@ -1,3 +1,3 @@
-<<<<<<< HEAD
-# Myblog-git Blog de recursos útiles
-=======
+
+# Myblog-git 
+[text](<Blog de recursos útiles/index.html>)
