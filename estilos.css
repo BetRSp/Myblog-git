@@ -9,7 +9,7 @@ body {
     
 }
 
-@media (max-width: 768px) {  /* Encabezado */
+  /* Encabezado */
 header {
     background: linear-gradient(90deg, #ff530070, #ff6b12);
     text-align: center;
@@ -34,8 +34,8 @@ header h1 {
     font-size: 3.5em;
     letter-spacing: 2px;
 }
-}
-@media (max-width: 768px) {  /* Navegación */
+
+  /* Navegación */
 nav {
     display: flex;
     justify-content: center;
@@ -54,12 +54,12 @@ nav a {
     text-transform: uppercase;
     transition: color 0.3s;
 }
-}
+
 nav a:hover {
     color: #ffffff;
 }
 
-@media (max-width: 768px) {   /* Contenido */
+  /* Contenido */
 .content {
     max-width: 900px;
     margin: 40px auto;
@@ -101,7 +101,7 @@ nav a:hover {
     color: #555; 
     line-height: 1.8; 
     }
-    }
+    
     .content h3 {
     color: #000000;
     margin-bottom: 20px;
@@ -115,7 +115,7 @@ nav a:hover {
         line-height: 1.6;
     }
 
-    @media (max-width: 768px) {   /* Artículos */
+     /* Artículos */
 .article {
     margin-bottom: 20px;
     padding: 15px;
@@ -127,7 +127,7 @@ nav a:hover {
     margin-top: 0;
     color: #ff6f61;
 }
-    }
+    
 .article:hover {
     transform: translateY(-5px);
     background: rgb(235, 235, 236);
@@ -144,7 +144,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {/* Formulario */
+/* Formulario */
 form  {
     display: flex;
     flex-direction: column;
@@ -156,7 +156,7 @@ form  {
     border-radius: 8px; 
     box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1); 
 }
-}
+
 label {
     font-weight: bold;
     text-align: left;
@@ -203,7 +203,7 @@ textarea {
     margin-bottom: 16px;
 }
 
-@media (max-width: 768px) {
+
 input, textarea {
     background: rgba(255, 255, 255, 0.2);
     color: #000000;
@@ -224,7 +224,7 @@ button {
     transition: background 0.3s ease;
     align-self: center; 
 }
-}
+
 button:hover {
     background: rgb(251, 55, 10)
 }
