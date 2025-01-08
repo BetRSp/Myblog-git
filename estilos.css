@@ -254,7 +254,7 @@ footer p {
 .content, nav, header, footer {
     animation: fadeIn 1s ease;
 }
-@media (max-width: 768px) {
+
     .imaglogo {
     width: 109px;
     height: 95px;
@@ -272,7 +272,7 @@ footer p {
         margin-top: -18px;
         border: solid 1px rgb(223, 61, 2);
         }
-    }
+    
  /* Estilo del menú desplegable */
     .dropdown {
     position: relative;
