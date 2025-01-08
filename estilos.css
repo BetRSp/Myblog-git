@@ -8,7 +8,7 @@ body {
     color: rgb(32, 32, 32);
     
 }
-@media (max-width: 768px) {
+
 /* Encabezado */
 header {
     background: linear-gradient(90deg, #ff530070, #ff6b12);
@@ -34,7 +34,7 @@ header h1 {
     font-size: 3.5em;
     letter-spacing: 2px;
 }
-}@media (max-width: 768px) {
+
 /* Navegación */
 nav {
     display: flex;
@@ -46,7 +46,7 @@ nav {
     top: 0;
     z-index: 1000;
 }
-}
+
 nav a {
     color: #ff5e00;
     text-decoration: none;
@@ -58,7 +58,7 @@ nav a {
 nav a:hover {
     color: #ffffff;
 }
-@media (max-width: 768px) {
+
 /* Contenido */
 .content {
     max-width: 900px;
@@ -101,7 +101,7 @@ nav a:hover {
     color: #555; 
     line-height: 1.8; 
     }
-}
+
     .content h3 {
     color: #000000;
     margin-bottom: 20px;
